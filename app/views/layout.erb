@@ -12,7 +12,7 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
   <!-- Load Vollkorn font -->
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -21,16 +21,24 @@
 </head>
 <body>
 <div id="content">
-  <header>
-    <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
+  <!-- <header> -->
+
     <div id="login-toolbar">
+      <a href="/">BookWorms</a><br>
       <% if current_user %>
-        <a href="/logout">Logout</a>
+      Hello, <a href="/user/<%=current_user.id%>"> <%= current_user.username.capitalize %></a> <img src="http://simpleicon.com/wp-content/uploads/book-1.png"> <a href="/logout">Logout</a>
       <% else %>
-        <a href="/login">Login</a>
+        <a href="/login" class="home-login">Login</a> <img src="http://simpleicon.com/wp-content/uploads/book-1.png"> <a href="/signup"> Signup </a>
       <% end %>
-  </header>
+    </div>
+
+  <!-- </header> -->
+  <div class="login">
+      <%= erb :'auth/login' %>
+  </div>
   <%= yield %>
-</div>
+<!-- </div> -->
 </body>
 </html>
+
+
