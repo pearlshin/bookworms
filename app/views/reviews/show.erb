@@ -1,7 +1,0 @@
-<div class="edit_review_form">
-  <form action="/reviews/<%= @review.id %>" method="POST">
-    <input type="hidden" name="_method" value="PUT">
-    <textarea rows="4" cols="50" id="review" name="review[text]"><%= @review.text %></textarea><br>
-    <input type="submit" value="submit">
-  </form>
-</div>
