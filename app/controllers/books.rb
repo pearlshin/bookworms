@@ -1,3 +1,18 @@
+
+get '/book/new' do
+  # create a new book
+  # @book = Book.create(params[:book])
+  erb :'books/new_book'
+end
+
+post '/book/new' do
+  p params
+  # title: params[:title], summary: params[:summary]
+  @book = Book.create(user_id: session[:user_id], title: params[:book][:title], author: params[:book][:author], summary: params[:book][:summary])
+  @userbook = UserBook.create(book_id: @book.id, user_id: session[:user_id])
+  redirect ("/user/#{@userbook.user.id}")
+end
+
 get '/book/:id' do
   # shows particular book's page with reviews
   @book = Book.find(params[:id])
@@ -18,4 +33,5 @@ post '/book/:id' do
     redirect("/book/#{review.id}")
   end
 end
+
 
