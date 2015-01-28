@@ -1,0 +1,16 @@
+<br><br>
+
+<h2><%= @book.title %></h2><br>
+by <%= @book.author %>
+<br>
+<%= @book.summary %>
+<br> <br>
+
+Reviews: <br>
+<div class="book-reviews">
+<ul>
+  <% @reviews.each do |review| %>
+    <li><a href="/user/<%= review.user.id %>"><%= review.user.username %></a> says: <%= review.text %> (<%= review.created_at.to_date %>)</li><br>
+  <% end %>
+</ul>
+</div>
