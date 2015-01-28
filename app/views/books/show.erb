@@ -6,11 +6,25 @@ by <%= @book.author %>
 <%= @book.summary %>
 <br> <br>
 
-Reviews: <br>
-<div class="book-reviews">
-<ul>
-  <% @reviews.each do |review| %>
-    <li><a href="/user/<%= review.user.id %>"><%= review.user.username %></a> says: <%= review.text %> (<%= review.created_at.to_date %>)</li><br>
-  <% end %>
-</ul>
-</div>
+<h3>Bookworm Reviews:</h3> <br>
+<p><%= @reviews.count %> reviews</p><br>
+
+<% if current_user %>
+  <div class="review-box">
+    <form action="/book/<%= @book.id %>" method=POST class="add-review">
+      <textarea rows="4" cols="50" id="review" name="text"></textarea><br><br>
+      <input type="submit" value="submit">
+    </form>
+  </div>
+<% end %>
+
+
+
+  <ul class="book-reviews">
+    <% @reviews.each do |review| %>
+      <%= erb :'books/_review', locals: { review: review } %>
+    <% end %>
+  </ul>
+
+
+
