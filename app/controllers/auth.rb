@@ -47,6 +47,7 @@ end
 
 get '/user/:id' do
   @user = User.find(params[:id])
+
   erb :'auth/user_profile'
 end
 
