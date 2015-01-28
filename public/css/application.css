@@ -3,7 +3,7 @@ body {
     font-family: 'PT Serif', serif;
     font-size: 20px;
     background-image: url("http://www.murketing.com/journal/wp-content/uploads/2010/03/2010_02_25_4.jpg");
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     background-size: 100%;
 
 }
@@ -28,4 +28,8 @@ a:visited {
 .book-reviews {
   text-align: center;
   width: 50%;
+}
+
+p {
+  font-size: 14px;
 }
