@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
+
+  def edit?(item)
+    self.id == item.user_id
+  end
 end
