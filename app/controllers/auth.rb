@@ -39,3 +39,7 @@ get '/user/:id' do
   @user = User.find(params[:id])
   erb :'auth/user_profile'
 end
+
+get '/user/:id/reviews' do
+  # shows all the reviews for every book a user has made
+end
