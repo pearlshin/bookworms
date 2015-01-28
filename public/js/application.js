@@ -29,4 +29,25 @@ $(document).ready(function() {
   });
 
 
+
+  $(".add-review").submit(function(event) {
+    event.preventDefault();
+    var $target = $(event.target);
+    // console.log($target);
+    // console.log($target.attr("action"));
+    // console.log($target.data.serialize());
+    // console.log($("#review").val());
+    $.ajax ({
+      url: $target.attr("action"),
+      type: $target.attr("method"),
+      data: $target.serialize()
+    }).done(function(response) {
+      // console.log(response)
+      $("#review").val("");
+      $(".book-reviews").append(response)
+    })
+  })
+
 });
+
+
