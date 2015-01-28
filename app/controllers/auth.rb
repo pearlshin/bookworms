@@ -1,5 +1,6 @@
 get '/' do
   if current_user
+    @books = Book.all
     erb :index
   end
   erb :index

@@ -4,7 +4,7 @@
   Username: <%= @user.username %><br>
   Email: <%= @user.email %><br>
 
-  Books: <% @user.books.each do |book| %><br>
+  <%= @user.username.capitalize %>'s Books: <% @user.books.each do |book| %><br>
    <a href="/book/<%= book.id %>"><%= book.title %></a>
   <% end %>
 

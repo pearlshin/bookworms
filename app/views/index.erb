@@ -1,0 +1,10 @@
+<br><br>
+Other bookworms are reading...<br>
+<div class="all-books"><br><br>
+  <% @books.each do |book| %>
+    <div class="book-box">
+      <a href="/book/<%= book.id %>"><%= book.title %></a><br>
+      <p>by <%= book.author %></p>
+    </div>
+  <% end %>
+</div>
