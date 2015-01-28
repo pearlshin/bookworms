@@ -1,5 +1,5 @@
 <% if current_user.edit?(review) %>
-   <a href="/reviews/<%= review.id %>/edit">edit</a> || <a href="#"> delete </a>
+   <a href="/reviews/<%= review.id %>/edit">edit</a>
 
 <% end %>
   <li><a href="/user/<%= review.user.id %>"><%= review.user.username %></a> says: <%= review.text %> (<%= review.created_at.to_date %>)</li>
