@@ -33,3 +33,10 @@ a:visited {
 p {
   font-size: 14px;
 }
+
+.book-box {
+  width: 50%;
+  height: 20%;
+  margin: 0 auto;
+  /*border: 1px solid black;*/
+}
