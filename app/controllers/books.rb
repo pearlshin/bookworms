@@ -1,3 +1,8 @@
+get '/book/all' do
+  @book = Book.all
+  erb :'books/show_all'
+end
+
 
 get '/book/new' do
   # create a new book
@@ -22,6 +27,7 @@ end
 
 post '/book/:id' do
   # ajax call to append review to a book
+
   if request.xhr?
     # p id
     # p params[:text]
