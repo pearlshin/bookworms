@@ -11,5 +11,6 @@ class User < ActiveRecord::Base
 
   def edit?(item)
     self.id == item.user_id
+    # true
   end
 end
