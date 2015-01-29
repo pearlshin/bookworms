@@ -12,16 +12,20 @@ get '/login' do
   erb :'auth/login'
 end
 
+
 post '/login' do
+  # p session[:error]
   user = User.find_by(username: params[:user][:username])
-  user.try(:authenticate, params[:user][:password])
-  session[:user_id] = user.id
-  if request.xhr?
-    redirect '/'
+  if user && user.authenticate(params[:user][:password])
+    session[:user_id] = user.id
+    # "inside if"
+    redirect "/" if request.xhr?
   else
-    # set_error('uh oh!')
+    # "inside else"
+    error_msg("Please check your login information.")
     redirect '/'
   end
+
 end
 
 
