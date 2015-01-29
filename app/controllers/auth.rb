@@ -22,6 +22,8 @@ post '/login' do
     redirect "/" if request.xhr?
   else
     # "inside else"
+    # @errors = (@)user.errors.messages
+    # erb :'auth/login'
     error_msg("Please check your login information.")
     redirect '/'
   end
