@@ -36,7 +36,7 @@ post '/book/:id' do
     erb :'books/_review', locals: {review: review}, :layout => false
   else
     # review = Review.create(user_id: session[:user_id], book_id: params[:id] text: params[:text])
-    redirect("/book/#{review.id}")
+    redirect("/book/#{review.book.id}")
   end
 end
 
