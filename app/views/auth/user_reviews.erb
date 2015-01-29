@@ -1,0 +1,6 @@
+<br>
+
+All reviews by <%= @user.username %>: <br>
+  <% @user.reviews.each do |review| %>
+    "<%= review.text %>" for <a href="/book/<%= review.book.id %>"> <%= review.book.title %></a><br>
+  <% end %>
